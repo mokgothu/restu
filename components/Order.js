@@ -1,45 +1,44 @@
 import React from 'react';
 import { View, Text, TouchableOpacity , StyleSheet,Image,ScrollView} from 'react-native';
+import seamussles from '../assets/images/seamussles.png'
 
 import {Card} from 'react-native-paper';
- export default function Order({ navigation }) {
+ export default function Order({ navigation,route }) {
 
   const nextpage = (()=>{
-     navigation.navigate('home')
-
+  navigation.navigate('home')
   })
+
   return (
     <ScrollView>
     <View style={styles.container} >
 <View>
-<Image style={styles.img1} source={require('../assets/images/Arrow.jpg.png')} />
+
 
 <Text style={styles.text}> SEAFOODY RESTURANT</Text>
- <Image style={styles.img2} source={require('../assets/images/Hearty.png')} />
+
 </View>   
-    <Image style={styles.image33} source={require('../assets/images/seamussles.png')} />
+    <Image style={styles.image33} source={seamussles} />
 
-<Text  style={styles.text2}> SEA FOOD </Text>
-<Text style={styles.text3}>  R360 </Text>
 
+<TouchableOpacity style={styles.subborder}onPress={()=> navigation.navigate('Order',{menuTitle:"Full Deck platter", image:require('../assets/images/prawns.png') , price:"R140"})}>
+<Text  style={styles.text2}> {route.params.menuTitle} </Text>
+<Text style={styles.text3}>  {route.params.price} </Text>
+<Text style={styles.text3}>  {route.params.description} </Text>
+
+</TouchableOpacity>
+
+<Card style={styles.box1}> 
 <Image source={require('../assets/images/Star.png')} />
 <Image style={styles.icon2} source={require('../assets/images/Star.png')} />
 <Image style={styles.icon3} source={require('../assets/images/Star.png')} />
 <Image style={styles.icon4} source={require('../assets/images/Star.png')} />
 
-<Card style={styles.box1}> 
-<Image style={styles.icon5} source={require('../assets/images/Hot.png')} />
-<Text style={styles.textbox1}>
-hot spice
-</Text>
-
-<Image style={styles.icon6} source={require('../assets/images/source.jpg.png')} />
-<Text style={styles.textbox2}>
-Mild
-</Text>
+<TouchableOpacity >
 <Image style={styles.icon7} source={require('../assets/images/Ellipse.png')} />
 
 <Text style={styles.icon8}> - 2 +</Text>
+</TouchableOpacity>
 </Card>
 
 <Card style={styles.box2}> 
@@ -51,8 +50,12 @@ Details
 <Text style={styles.text4}>
 SeaFoody is a seafood restaurant serving the best authentic fish, steak and sushi in a fun, family-friendly environment. That's why everyone loves SeaFoody!
 </Text>
+
 </Card>
 
+<TouchableOpacity style={styles.subborder2}>
+<Text style={styles.subborder1}>Add to Cart</Text>
+</TouchableOpacity>
     </View>
      </ScrollView>
   );
@@ -117,6 +120,7 @@ box1:{
   height:50,
   backgroundColor:'#FFFFFF',
   marginLeft:10,
+  marginTop:10,
 
 },
 box2:{
@@ -137,7 +141,7 @@ icon6:{
   marginTop:-30,
 },
 icon7:{
-marginTop:-38,
+marginTop:-25,
 marginLeft:225,
 },
 icon8:{
@@ -154,8 +158,16 @@ textbox2:{
   marginLeft:130,
   marginTop:-20,
   fontfamily: 'Inknut Antiqua',
-},
-text1:{
+  
+
+
+
+
+
+
+
+
+  
 textDecorationLine:'center',
 fontFamily:'Inika',
 fontWeight:'bold',
@@ -167,5 +179,22 @@ fontFamily:'Inika',
 fontSize:14,
 lineHeight:21,
 fontStyle:'normal',
-},
+  },
+    subborder1:{
+      width:134,
+      height:36,
+      marginLeft:20,
+      fontFamily:'Inknut Antiqua',
+      fontSize:14,
+      fontWeight:'bold',
+  },
+  subborder2:{
+    width:120,
+    height:30,
+    marginLeft:100,
+    fontFamily:'Inter',
+    marginTop:10,
+    backgroundColor:'#A68383',
+    borderRadius:60,
+  },
 })

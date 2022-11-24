@@ -14,12 +14,15 @@ export default function Home({
   return (
     <ScrollView>
     <View style={styles.container}>
-
+    
+<TouchableOpacity onPress={nextpage}>
     <Image style={styles.icon1} source={require('../assets/images/sushiiii.jpg')} />
-
+</TouchableOpacity>
 <View style={{ alignItems: 'center', justifyContent:'center', backgroundColor:'#ffff'}}>
-  
-  <Image style={styles.icon2} source={require('../assets/images/sushiiii.jpg')} />
+
+
+<Image  style={styles.icon2} source={require('../assets/images/sushiiii.jpg')} />
+
 
   <Image style={styles.icon3} source={require('../assets/images/John-Dory-8-Mussels.png')} />
 
@@ -34,19 +37,19 @@ export default function Home({
 <Image style={styles.box1} source={require('../assets/images/prawns.png')} />
 
 
-<TouchableOpacity style={styles.subborder}onPress={nextpage}>
+<TouchableOpacity style={styles.subborder}  onPress={()=> navigation.navigate('Order' , {menuTitle:"prawns and salad",image:require('../assets/images/prawns.png') , price:"R160"})}>
 <Text style={styles.subborder1}>prawns and salad</Text>
 </TouchableOpacity>
 
 <Text style={styles.subtext1}>R160</Text>
-<Image style={styles.box3} source={require('../assets/images/Hearty.png')} />
+<Image style={styles.box3} source={require('../assets/images/Hearty.png')} /> 
  </View>
 
 
 <View style={styles.borders1}> 
 <Image style={styles.box1} source={require('../assets/images/fodo.jpg')} />
 
-<TouchableOpacity style={styles.subborder}onPress={nextpage}>
+<TouchableOpacity style={styles.subborder}onPress={()=>navigation.navigate('Order', {menuTitle:"Grilled or cajun",image:require('../assets/images/fodo.jpg') , price:"246"})}>
 <Text style={styles.subborder1}>Grilled or cajun </Text>
 </TouchableOpacity>
 
@@ -57,22 +60,23 @@ export default function Home({
 <View style={styles.borders2}> 
 <Image style={styles.box1} source={require('../assets/images/hake.png')} />
 
-<TouchableOpacity style={styles.subborder}onPress={nextpage}>
+<TouchableOpacity style={styles.subborder}onPress={()=> navigation.navigate('Order',{menuTitle:"Full Deck platter", image:require('../assets/images/prawns.png') , price:"R140"})}>
 <Text style={styles.subborder1}>Full Deck platter</Text>
 </TouchableOpacity>
 
-<Text style={styles.subtext1}>R246</Text>
+<Text style={styles.subtext1}>R140</Text>
 <Image style={styles.box3} source={require('../assets/images/Hearty.png')} />
 </View>
 
 <View style={styles.borders3}> 
 <Image style={styles.box1} source={require('../assets/images/images.png')} />
 
-<TouchableOpacity style={styles.subborder}onPress={nextpage}>
+<TouchableOpacity style={styles.subborder}onPress={()=> navigation.navigate('Order', {menuTitle:"Rotti with chip", image:require('../assets/images/images.png'), price:"R120",
+ decsriptin:"SeaFoody is a seafood restaurant serving the best authentic fish, steak and sushi in a fun, family-friendly environment. That's why everyone loves SeaFoody!with everything happening"})}>
 <Text style={styles.subborder1}>Rotti with chip</Text>
 </TouchableOpacity>
 
-<Text style={styles.subtext1}>R246</Text>
+<Text style={styles.subtext1}>R120</Text>
 <Image style={styles.box3} source={require('../assets/images/Hearty.png')} />
 </View>
 
